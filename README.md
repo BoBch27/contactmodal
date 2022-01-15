@@ -4,7 +4,7 @@ It allows your visitors to contact you easily from any page of your website.
 It's written in pure JavaScript and needs you to handle the backend side.
 
 ## Demo
-A live demo is available [here](https://www.bobbydonev.co.uk).
+A live demo is available [here](https://bobbydonev.co.uk).
 
 ## How to use
 Include the following tags in the `<head>` section of your website's HTML: <br>
