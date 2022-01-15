@@ -1,0 +1,26 @@
+{
+  "name": "contactmodal",
+  "version": "0.1.0",
+  "description": "An elegant, easy to use contact form for any website.",
+  "main": "dist/contactbox.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobch27/contactmodal.git"
+  },
+  "keywords": [
+    "contactmodal",
+    "contact",
+    "modal",
+    "form",
+    "chat"
+  ],
+  "author": "Bobby Donev <hello@bobbydonev.co.uk> (https://bobbydonev.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobch27/contactmodal/issues"
+  },
+  "homepage": "https://github.com/bobch27/contactmodal#readme"
+}
