@@ -1,4 +1,5 @@
 import contactModalHTML from './contactmodal.html';
+import contactModalCSS from './contactmodal.css';
 
 class ContactModal {
     constructor(options = {}) {
@@ -76,7 +77,12 @@ class ContactModal {
         this.modal.querySelector('.contactmodal__btn').addEventListener('click', () => this.toggle());
         this.modal.querySelector('.contactmodal__exit').addEventListener('click', () => this.toggle());
 
-        // append modal to DOM
+        // append css to head
+        const style = document.createElement('style');
+        style.textContent = contactModalCSS;
+        document.head.appendChild(style);
+
+        // append modal to body
         const docFrag = document.createDocumentFragment();
         docFrag.appendChild(this.modal);
         document.body.appendChild(docFrag);
