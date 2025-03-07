@@ -76,6 +76,7 @@ class ContactModal {
 
         this.modal.querySelector('.contactmodal__btn').addEventListener('click', () => this.toggle());
         this.modal.querySelector('.contactmodal__exit').addEventListener('click', () => this.toggle());
+        this.form.addEventListener('submit', (e) => this.#submitForm(e));
 
         // append css to head
         const style = document.createElement('style');
@@ -90,6 +91,70 @@ class ContactModal {
 
     toggle() {
         this.modal.classList.toggle('contactmodal--open');
+    }
+
+    async #submitForm(e) {
+        e.preventDefault();
+    
+        const form = this.form;
+        const loadingOverlay = this.modal.querySelector(".contactmodal__overlay--loading");
+        const successOverlay = this.modal.querySelector(".contactmodal__overlay--success");
+        const errorOverlay = this.modal.querySelector(".contactmodal__overlay--error");
+        
+        // show loading overlay
+        loadingOverlay.classList.add("contactmodal__overlay--visible");
+    
+        // gather form data
+        const name = form.querySelector('#user_name')?.value || null;
+        const email = form.querySelector('#user_email').value;
+        const message = form.querySelector('#user_message').value;
+        const { token } = this.options;
+    
+        // prepare payload
+        const payload = { 
+            name, 
+            email, 
+            message,
+            page: window.location.href,
+            token: (token.name && token.value) ? token : null
+        };
+
+        try {
+            const response = await fetch(this.options.endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+        
+            // reset form and loading state
+            form.reset();
+            form.querySelector('button').blur();
+            loadingOverlay.classList.remove('contactmodal__overlay--visible');
+            
+            // handle response
+            if (response.ok) {
+                successOverlay.classList.add("contactmodal__overlay--visible");
+    
+                setTimeout(() => {
+                    successOverlay.classList.remove('contactmodal__overlay--visible');
+                }, this.options.delay * 1000);
+            } else {
+                throw new Error('Server responded with an error');
+            }
+        } catch (error) {
+            // handle errors
+            console.error('Form submission error:', error);
+            form.reset();
+            form.querySelector('button').blur();
+            loadingOverlay.classList.remove('contactmodal__overlay--visible');
+            errorOverlay.classList.add("contactmodal__overlay--visible");
+            
+            setTimeout(() => {
+                errorOverlay.classList.remove('contactmodal__overlay--visible');
+            }, this.options.delay * 1000);
+        }
     }
 }
 
