@@ -8,6 +8,7 @@ class ContactModal {
             position: 'right',
             name: true,
             delay: 5,
+            values: { name: '', email: '' },
             token: { name: null, value: null },
             colors: { bg: '#242424', text: '#ffffff', details: '#ffffff' },
             texts: {
@@ -26,6 +27,9 @@ class ContactModal {
         this.options = { ...this.defaults, ...options };
             
         // handle nested options
+        if (options.values) {
+            this.options.values = { ...this.defaults.values, ...options.values };
+        }
         if (options.colors) {
             this.options.colors = { ...this.defaults.colors, ...options.colors };
         }
@@ -42,6 +46,11 @@ class ContactModal {
     #setupModal() {
         // modal content
         let html = contactModalHTML;
+
+        // replace all placeholders
+        Object.keys(this.options.values).forEach((key) => {
+            html = html.replace(`{{ ${key} }}`, this.options.values[key] || '');
+        });
 
         // replace all placeholders
         Object.keys(this.options.texts).forEach((key) => {
