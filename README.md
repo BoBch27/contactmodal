@@ -9,7 +9,9 @@ A live demo is available [here](https://bobbydonev.com).
 ## How to use
 ### CDN
 Include the following tag in the `<head>` section of your website's HTML: <br>
-`<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.0/dist/contactmodal.min.js"></script>`
+```html
+  <script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.0/dist/contactmodal.min.js"></script>
+```
 
 ### NPM
 `npm install contactmodal`
