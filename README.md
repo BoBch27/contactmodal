@@ -7,22 +7,33 @@ It's written in pure JavaScript and needs you to handle the backend side.
 A live demo is available [here](https://bobbydonev.com).
 
 ## How to use
-Include the following tags in the `<head>` section of your website's HTML: <br>
-`<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@0.1.0/dist/contactmodal.min.js"></script>`<br>
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@0.1.0/dist/contactmodal.min.css">`
+### CDN
+Include the following tag in the `<head>` section of your website's HTML: <br>
+`<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.0/dist/contactmodal.min.js"></script>`
+
+### NPM
+`npm install contactmodal`
+```javascript
+  import ContactModal from 'contactmodal'
+```
 
 Create an endpoint in your backend. The data is sent in JSON format by a POST request with the parameters `name`, `email`, `message` and `page`.
 
-A token option is also available if your application needs to pass this parameter to the backend. To allow the token option, include a token name and value, as shown below.
+A `phone` and `token` options are also available if your application needs to pass these parameters to the backend. To allow these options, use the options as shown below.
 
-Add the following script (these are the default values - only the `endpoint` is required, the rest are optional):
+Add the following script (these are the default values - all fields are optional):
 ```javascript
 new ContactModal({
-  endpoint: 'submit.php', // Define your endpoint for the POST request
+  endpoint: '/contact', // Define your endpoint for the POST request
   position: 'right', // Possible values are 'left' or 'right'.
   delay: 5, // Set the delay after which the success/error message is hidden and form is reset (in seconds)
-  name: true, // Populate the name field if you already know user's name. Possible values are true/false (to toggle whether the field is shown in the form), or a string containing the name.
-  email: null, // // Populate the email field if you already know user's email. Possible values are null (if you don't know their email), or a string containing the email.
+  name: true, // Show a name field. Possible values are true/false.
+  phone: false, // Show a phone field. Possible values are true/false.
+  values: { // Populate fields if you already know user's data.
+    name: '', // Possible value is a string
+    phone: '', // Possible value is a string
+    email: '', // Possible value is a string
+  }
   token: { // Both name and value are required in order to send the token with the request.
     name: null, // Possible values are null or a string
     value: null // Possible values are null or a string
@@ -30,12 +41,13 @@ new ContactModal({
   colors: { // Possible values are HEX color "#000000" or color name "black".
     bg: '#242424', // Sets the background color.
     text: '#ffffff', // Sets the text color.
-    details: '#242424' // Sets an additional color used in various places in the modal.
+    details: '#ffffff' // Sets an additional color used in various places in the modal.
   },
   texts: {
     title: 'Let\'s have a chat!',
-    subtitle: null,
+    subtitle: null, // Optional - if unset, no subtitle will be shown
     namePlaceholder: 'Your name',
+    phonePlaceholder: 'Your phone',
     emailPlaceholder: 'Your email',
     messagePlaceholder: 'Your message',
     successMssg: 'Thanks, your message has been sent!',
@@ -49,7 +61,7 @@ new ContactModal({
 You can show or hide ContactModal with the `toggle` method:
 ```javascript
 const ContactModal = new ContactModal({
-  endpoint: 'http://yourwebsite.com/form.php'
+  endpoint: 'http://yourwebsite.com/contact'
 });
 
 ContactModal.toggle();
