@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bobch27/contactmodal/issues"
   },
-  "homepage": "https://github.com/bobch27/contactmodal#readme"
+  "homepage": "https://github.com/bobch27/contactmodal#readme",
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
 }
