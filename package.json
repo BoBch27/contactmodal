@@ -2,7 +2,7 @@
   "name": "contactmodal",
   "version": "0.1.0",
   "description": "An elegant, easy to use contact form for any website.",
-  "main": "dist/contactbox.js",
+  "main": "dist/contactmodal.min.js",
   "scripts": {
     "build": "node build.config.js"
   },
