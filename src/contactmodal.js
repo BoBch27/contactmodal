@@ -7,14 +7,16 @@ class ContactModal {
             endpoint: '/contact',
             position: 'right',
             name: true,
+            phone: false,
             delay: 5,
-            values: { name: '', email: '' },
+            values: { name: '', phone: '', email: '' },
             token: { name: null, value: null },
             colors: { bg: '#242424', text: '#ffffff', details: '#ffffff' },
             texts: {
                 title: "Let's have a chat!",
                 subtitle: '',
                 namePlaceholder: 'Your name',
+                phonePlaceholder: 'Your phone',
                 emailPlaceholder: 'Your email',
                 messagePlaceholder: 'Your message',
                 successMssg: 'Thanks, your message has been sent!',
@@ -77,6 +79,13 @@ class ContactModal {
             nameField.required = false;
             nameField.parentElement.style.display = 'none';
         }
+
+        // handle phone field visibility
+        if (!this.options.phone) {
+            const phoneField = this.form.querySelector('#user_phone');
+            phoneField.required = false;
+            phoneField.parentElement.style.display = 'none';
+        }
     
         // handle subtitle visibility
         if (!this.options.texts.subtitle) {
@@ -115,6 +124,7 @@ class ContactModal {
     
         // gather form data
         const name = form.querySelector('#user_name')?.value || null;
+        const phone = form.querySelector('#user_phone')?.value || null;
         const email = form.querySelector('#user_email').value;
         const message = form.querySelector('#user_message').value;
         const { token } = this.options;
@@ -122,6 +132,7 @@ class ContactModal {
         // prepare payload
         const payload = { 
             name, 
+            phone,
             email, 
             message,
             page: window.location.href,
