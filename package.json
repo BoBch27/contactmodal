@@ -1,6 +1,6 @@
 {
   "name": "contactmodal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An elegant, easy to use contact form for any website.",
   "main": "dist/contactmodal.min.js",
   "module": "dist/contactmodal.min.js",
