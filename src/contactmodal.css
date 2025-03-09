@@ -15,15 +15,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     font-size: 32px;
     border-radius: 50%;
     border: none;
     background-color: var(--bg-color);
     color: var(--text-color);
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     z-index: 100;
     box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28);
 }
@@ -35,13 +35,13 @@
     display: none;
 }
 #contactmodal.right .contactmodal__btn {
-    right: 40px;
+    right: 20px;
 }
 #contactmodal.left .contactmodal__btn {
-    left: 40px;
+    left: 20px;
 }
 #contactmodal .contactmodal__btn svg {
-    width: 55%;
+    width: 65%;
 }
 #contactmodal .contactmodal__btn svg path {
     fill: var(--text-color);
@@ -61,7 +61,7 @@
 }
 #contactmodal .contactmodal {
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     width: 370px;
     max-width: 400px;
     border-radius: 20px;
@@ -78,13 +78,13 @@
     visibility: visible;
 }
 #contactmodal.right .contactmodal {
-    right: 30px;
+    right: 20px;
 }
 #contactmodal.left .contactmodal {
-    left: 30px;
+    left: 20px;
 }
 #contactmodal.contactmodal--open .contactmodal__contact {
-    transform: translateX(0%);
+    transform: translateX(0%) !important;
 }
 #contactmodal .contactmodal__contact {
     display: flex;
@@ -92,11 +92,16 @@
     justify-content: center;
     position: relative;
     transition: all 300ms ease-in;
-    transform: translateX(110%);
     background-color: var(--bg-color);
     color: var(--text-color);
     width: 100%;
     padding: 40px;
+}
+#contactmodal.right .contactmodal__contact {
+    transform: translateX(110%);
+}
+#contactmodal.left .contactmodal__contact {
+    transform: translateX(-110%);
 }
 #contactmodal .contactmodal__title {
     font-size: 26px;
@@ -228,12 +233,15 @@
     color: var(--details-color);
 }
 @media (max-width: 500px) {
+    #contactmodal .contactmodal__btn {
+        width: 50px;
+        height: 50px;
+    }
     #contactmodal .contactmodal {
         width: calc(100% - 40px);
         margin: 0 auto;
         right: unset !important;
-        bottom: 30px !important;
-        left: 50%;
+        left: 50% !important;
         transform: translateX(-50%);
     }
 }
