@@ -43,20 +43,20 @@
             <div class="form__item">
                 <input 
                     class="input" 
-                    id="user_phone" 
-                    type="tel" 
-                    placeholder="{{ phonePlaceholder }}" 
-                    value="{{ phone }}"
+                    id="user_email" 
+                    type="email" 
+                    placeholder="{{ emailPlaceholder }}" 
+                    value="{{ email }}"
                     required 
                 />
             </div>
             <div class="form__item">
                 <input 
                     class="input" 
-                    id="user_email" 
-                    type="email" 
-                    placeholder="{{ emailPlaceholder }}" 
-                    value="{{ email }}"
+                    id="user_phone" 
+                    type="tel" 
+                    placeholder="{{ phonePlaceholder }}" 
+                    value="{{ phone }}"
                     required 
                 />
             </div>
