@@ -1,53 +1,79 @@
 # ContactModal
-ContactModal is an easy to use, elegant contact form modal.
-It allows your visitors to contact you easily from any page of your website.
-It's written in pure JavaScript and needs you to handle the backend side.
 
-## Demo
-A live demo is available [here](https://bobbydonev.com).
+**ContactModal** is a lightweight and elegant contact form modal that allows visitors to easily contact you from any page on your website. It is written in pure JavaScript and requires backend handling for form submissions.
 
-## How to use
-### CDN
-Include the following tag in the `<head>` section of your website's HTML: <br>
+## 🚀 Live Demo
+
+Check out the [live demo](https://bobbydonev.com) to see ContactModal in action.
+
+---
+
+## 📌 Installation
+
+### 📦 CDN (Recommended)
+
+Include the following script in your website's `<head>` section:
+
 ```html
-  <script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.0/dist/contactmodal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.1/dist/contactmodal.min.js"></script>
 ```
 
-### NPM
-`npm install contactmodal`
+### 📦 NPM
+
+Install via NPM:
+
+```sh
+npm install contactmodal
+```
+
+Import it in your JavaScript file:
+
 ```javascript
-  import ContactModal from 'contactmodal'
+import ContactModal from 'contactmodal';
 ```
 
-Create an endpoint in your backend. The data is sent in JSON format by a POST request with the parameters `name`, `email`, `message` and `page`.
+---
 
-A `phone` and `token` options are also available if your application needs to pass these parameters to the backend. To allow these options, use the options as shown below.
+## ⚙️ Setup & Configuration
 
-Add the following script (these are the default values - all fields are optional):
+### Backend Requirements
+
+ContactModal sends form data via a `POST` request in JSON format with the following parameters:
+
+- `name`
+- `email`
+- `message`
+- `page`
+- *(Optional)* `phone` and `token`
+
+### Initialisation
+
+Add the following script to configure ContactModal. All fields are optional, and default values are provided:
+
 ```javascript
 new ContactModal({
-  endpoint: '/contact', // Define your endpoint for the POST request
-  position: 'right', // Possible values are 'left' or 'right'.
-  delay: 5, // Set the delay after which the success/error message is hidden and form is reset (in seconds)
-  name: true, // Show a name field. Possible values are true/false.
-  phone: false, // Show a phone field. Possible values are true/false.
-  values: { // Populate fields if you already know user's data.
-    name: '', // Possible value is a string
-    phone: '', // Possible value is a string
-    email: '', // Possible value is a string
-  }
-  token: { // Both name and value are required in order to send the token with the request.
-    name: null, // Possible values are null or a string
-    value: null // Possible values are null or a string
+  endpoint: '/contact', // Backend endpoint for form submission
+  position: 'right', // 'left' or 'right'
+  delay: 5, // Time (in seconds) before the form resets after submission
+  name: true, // Show name field (true/false)
+  phone: false, // Show phone field (true/false)
+  values: { // Pre-fill form fields (optional)
+    name: '',
+    phone: '',
+    email: ''
   },
-  colors: { // Possible values are HEX color "#000000" or color name "black".
-    bg: '#242424', // Sets the background color.
-    text: '#ffffff', // Sets the text color.
-    details: '#ffffff' // Sets an additional color used in various places in the modal.
+  token: { // Optional security token
+    name: null,
+    value: null
   },
-  texts: {
-    title: 'Let\'s have a chat!',
-    subtitle: null, // Optional - if unset, no subtitle will be shown
+  colors: { // Customise modal appearance
+    bg: '#242424', // Background colour
+    text: '#ffffff', // Text colour
+    details: '#ffffff' // Accent colour
+  },
+  texts: { // Customise modal text
+    title: "Let's have a chat!",
+    subtitle: null, // Optional subtitle
     namePlaceholder: 'Your name',
     phonePlaceholder: 'Your phone',
     emailPlaceholder: 'Your email',
@@ -59,12 +85,28 @@ new ContactModal({
 });
 ```
 
-## Available Method
-You can show or hide ContactModal with the `toggle` method:
+---
+
+## 📖 Methods
+
+### `toggle()` - Show or Hide ContactModal
+
+You can programmatically open or close the modal using:
+
 ```javascript
-const ContactModal = new ContactModal({
+const contactModal = new ContactModal({
   endpoint: 'http://yourwebsite.com/contact'
 });
 
-ContactModal.toggle();
-``` 
+contactModal.toggle();
+```
+
+---
+
+## 📝 Notes
+
+- Ensure your backend properly handles JSON requests from the modal.
+- The modal is fully customisable through the options provided.
+- For feature requests or bug reports, please open an issue on GitHub.
+
+---
