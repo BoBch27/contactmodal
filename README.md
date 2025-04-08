@@ -15,7 +15,7 @@ Check out the [live demo](https://bobbydonev.com) to see ContactModal in action.
 Include the following script in your website's `<head>` section:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.3/dist/contactmodal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/bobch27/contactmodal@1.0.4/dist/contactmodal.min.js"></script>
 ```
 
 ### 📦 NPM
