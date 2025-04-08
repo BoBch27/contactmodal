@@ -15,10 +15,10 @@ class ContactModal {
             texts: {
                 title: "Let's have a chat!",
                 subtitle: '',
-                namePlaceholder: 'Your name',
-                phonePlaceholder: 'Your phone',
-                emailPlaceholder: 'Your email',
-                messagePlaceholder: 'Your message',
+                namePlaceholder: 'Your Name',
+                phonePlaceholder: 'Your Phone',
+                emailPlaceholder: 'Your Email',
+                messagePlaceholder: 'Your Message',
                 successMssg: 'Thanks, your message has been sent!',
                 errorMssg: 'Uh-oh... Something went wrong. Please try again later.',
                 buttonText: 'Send'
