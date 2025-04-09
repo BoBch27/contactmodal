@@ -20,15 +20,17 @@
 </button>
 <div class="contactmodal">
     <div class="contactmodal__contact">
-        <button class="contactmodal__exit contactmodal__click">
-            &#215;
-        </button>
-        <h3 class="contactmodal__title contactmodal__title--contact">
-            {{ title }}
-        </h3>
-        <p class="contactmodal__sub-title contactmodal__sub-title--contact">
-            {{ subtitle }}
-        </p>
+        <div class="contactmodal__header">
+            <button class="contactmodal__exit contactmodal__click">
+                &#215;
+            </button>
+            <h3 class="contactmodal__title contactmodal__title--contact">
+                {{ title }}
+            </h3>
+            <p class="contactmodal__sub-title contactmodal__sub-title--contact">
+                {{ subtitle }}
+            </p>
+        </div>
         <form id="contact__form" class="contactmodal__form">
             <div class="form__item">
                 <input 
