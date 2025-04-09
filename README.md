@@ -69,7 +69,6 @@ new ContactModal({
   colors: { // Customise modal appearance
     bg: '#ffffff', // Background colour
     text: '#242424', // Text colour
-    details: '#ffffff' // Accent colour
   },
   texts: { // Customise modal text
     title: "Let's have a chat!",

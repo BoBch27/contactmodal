@@ -11,7 +11,7 @@ class ContactModal {
             delay: 5,
             values: { name: '', phone: '', email: '' },
             token: { name: null, value: null },
-            colors: { bg: '#ffffff', text: '#242424', details: '#ffffff' },
+            colors: { bg: '#ffffff', text: '#242424' },
             texts: {
                 title: "Let's have a chat!",
                 subtitle: '',
@@ -71,7 +71,6 @@ class ContactModal {
         // set modal colours
         document.documentElement.style.setProperty('--bg-color', this.options.colors.bg);
         document.documentElement.style.setProperty('--text-color', this.options.colors.text);
-        document.documentElement.style.setProperty('--details-color', this.options.colors.details);
 
         // handle name field visibility
         if (!this.options.name) {
