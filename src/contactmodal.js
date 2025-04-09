@@ -59,7 +59,7 @@ class ContactModal {
             html = html.replace(`{{ ${key} }}`, this.options.texts[key] || '');
         });
 
-        // create modal container
+        // create modal element
         this.modal = document.createElement('div');
         this.modal.className = `contactmodal ${this.options.position}`;
         this.modal.innerHTML = html;
@@ -94,15 +94,23 @@ class ContactModal {
         this.modal.querySelector('.contactmodal__exit').addEventListener('click', () => this.toggle());
         this.form.addEventListener('submit', (e) => this.#submitForm(e));
 
-        // append css to head
+        // create modal container
+        const container = document.createElement('div');
+        container.id = 'contactmodal';
+
+        // attach shadow root
+        const shadowRoot = container.attachShadow({ mode: 'open' });
+
+        // append css to shadow root
         const style = document.createElement('style');
         style.textContent = contactModalCSS;
-        document.head.appendChild(style);
+        shadowRoot.appendChild(style);
 
-        // append modal to body
-        const docFrag = document.createDocumentFragment();
-        docFrag.appendChild(this.modal);
-        document.body.appendChild(docFrag);
+        // append modal to shadow root
+        shadowRoot.appendChild(this.modal);
+
+        // append modal container to document body
+        document.body.appendChild(container);
     }
 
     toggle() {
