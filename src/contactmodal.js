@@ -61,8 +61,7 @@ class ContactModal {
 
         // create modal container
         this.modal = document.createElement('div');
-        this.modal.id = 'contactmodal';
-        this.modal.className = this.options.position;
+        this.modal.className = `contactmodal ${this.options.position}`;
         this.modal.innerHTML = html;
 
         // get form

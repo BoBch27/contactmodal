@@ -5,7 +5,7 @@
     --text-color: #242424;
 }
 
-#contactmodal * {
+.contactmodal * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
@@ -14,7 +14,7 @@
     line-height: 1.5;
     vertical-align: middle;
 }
-#contactmodal .contactmodal__btn {
+.contactmodal .contactmodal__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,40 +30,40 @@
     z-index: 100;
     box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28);
 }
-#contactmodal .contactmodal__btn:hover, #contactmodal .contactmodal__btn:focus {
+.contactmodal .contactmodal__btn:hover, .contactmodal .contactmodal__btn:focus {
     background-color: var(--bg-color);
     color: var(--text-color);
     border-color: var(--text-color);
 }
-#contactmodal.contactmodal--open .contactmodal__btn {
+.contactmodal.contactmodal--open .contactmodal__btn {
     display: none;
 }
-#contactmodal.right .contactmodal__btn {
+.contactmodal.right .contactmodal__btn {
     right: 20px;
 }
-#contactmodal.left .contactmodal__btn {
+.contactmodal.left .contactmodal__btn {
     left: 20px;
 }
-#contactmodal .contactmodal__btn svg {
+.contactmodal .contactmodal__btn svg {
     width: 55%;
 }
-#contactmodal .contactmodal__btn svg path {
+.contactmodal .contactmodal__btn svg path {
     fill: var(--bg-color);
 }
-#contactmodal .contactmodal__btn:hover svg path, #contactmodal .contactmodal__btn:focus svg path {
+.contactmodal .contactmodal__btn:hover svg path, .contactmodal .contactmodal__btn:focus svg path {
     fill: var(--text-color);
 }
-#contactmodal .contactmodal__click {
+.contactmodal .contactmodal__click {
     cursor: pointer;
     transition: all 300ms ease;
 }
-#contactmodal .contactmodal__click:hover, #contactmodal .contactmodal__click:focus {
+.contactmodal .contactmodal__click:hover, .contactmodal .contactmodal__click:focus {
     transform: scale(1.1);
 }
-#contactmodal .contactmodal__click:active {
+.contactmodal .contactmodal__click:active {
     transform: scale(0.8);
 }
-#contactmodal .contactmodal__container {
+.contactmodal .contactmodal__container {
     position: fixed;
     bottom: 20px;
     width: 370px;
@@ -76,21 +76,21 @@
     transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
     text-align: center;
 }
-#contactmodal.contactmodal--open .contactmodal__container {
+.contactmodal.contactmodal--open .contactmodal__container {
     z-index: 100;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible;
 }
-#contactmodal.right .contactmodal__container {
+.contactmodal.right .contactmodal__container {
     right: 20px;
 }
-#contactmodal.left .contactmodal__container {
+.contactmodal.left .contactmodal__container {
     left: 20px;
 }
-#contactmodal.contactmodal--open .contactmodal__contact {
+.contactmodal.contactmodal--open .contactmodal__contact {
     transform: translateX(0%) !important;
 }
-#contactmodal .contactmodal__contact {
+.contactmodal .contactmodal__contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,17 +100,17 @@
     color: var(--text-color);
     width: 100%;
 }
-#contactmodal.right .contactmodal__contact {
+.contactmodal.right .contactmodal__contact {
     transform: translateX(110%);
 }
-#contactmodal.left .contactmodal__contact {
+.contactmodal.left .contactmodal__contact {
     transform: translateX(-110%);
 }
-#contactmodal .contactmodal__container .contactmodal__header {
+.contactmodal .contactmodal__container .contactmodal__header {
     padding: 40px;
     background-color: var(--text-color);
 }
-#contactmodal .contactmodal__container .contactmodal__exit {
+.contactmodal .contactmodal__container .contactmodal__exit {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -121,25 +121,25 @@
     border: none;
     box-shadow: none;
 }
-#contactmodal .contactmodal__title {
+.contactmodal .contactmodal__title {
     font-size: 24px;
     font-weight: 700;
     text-align: left;
     color: var(--bg-color);
 }
-#contactmodal .contactmodal__sub-title {
+.contactmodal .contactmodal__sub-title {
     font-size: 14px;
     text-align: left;
     font-style: italic;
     color: var(--bg-color);
 }
-#contactmodal .contactmodal__form {
+.contactmodal .contactmodal__form {
     padding: 40px;
 }
-#contactmodal .contactmodal__container .form__item {
+.contactmodal .contactmodal__container .form__item {
     margin-bottom: 20px;
 }
-#contactmodal .contactmodal__container input, #contactmodal .contactmodal__container textarea {
+.contactmodal .contactmodal__container input, .contactmodal .contactmodal__container textarea {
     width: 100%;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -152,24 +152,24 @@
     transition: all 300ms ease;
     font-size: 14px;
 }
-#contactmodal .contactmodal__container textarea {
+.contactmodal .contactmodal__container textarea {
     height: 100px;
     padding-top: 10px;
     resize: none;
     line-height: 1.3;
 }
-#contactmodal .contactmodal__container input:hover, #contactmodal textarea:hover {
+.contactmodal .contactmodal__container input:hover, .contactmodal textarea:hover {
     border-color: #dcdfe6;
 }
-#contactmodal .contactmodal__container input:focus, #contactmodal textarea:focus {
+.contactmodal .contactmodal__container input:focus, .contactmodal textarea:focus {
     border-color: var(--text-color);
 }
-#contactmodal .contactmodal__container input::placeholder, #contactmodal textarea::placeholder {
+.contactmodal .contactmodal__container input::placeholder, .contactmodal textarea::placeholder {
     color: var(--text-color);
     font-weight: 500;
     font-style: italic;
 }
-#contactmodal .contactmodal__container .form__submit {
+.contactmodal .contactmodal__container .form__submit {
     background-color: var(--text-color);
     border: 2px solid var(--text-color);
     border-radius: 10px;
@@ -183,14 +183,14 @@
     transition: all 300ms ease;
     cursor: pointer;
 }
-#contactmodal .contactmodal__container .form__submit:hover, 
-#contactmodal .contactmodal__container .form__submit:focus {
+.contactmodal .contactmodal__container .form__submit:hover, 
+.contactmodal .contactmodal__container .form__submit:focus {
     border-color: var(--text-color);
     color: var(--text-color);
     background-color: transparent;
     outline: none;
 }
-#contactmodal .contactmodal__container .contactmodal__overlay {
+.contactmodal .contactmodal__container .contactmodal__overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -201,11 +201,11 @@
     justify-content: center;
     z-index: -1;
 }
-#contactmodal .contactmodal__container .contactmodal__overlay--loading {
+.contactmodal .contactmodal__container .contactmodal__overlay--loading {
     background-color: var(--bg-color);
     font-size: 20px;
 }
-#contactmodal .contactmodal__container .contactmodal__overlay--success {
+.contactmodal .contactmodal__container .contactmodal__overlay--success {
     background-color: var(--bg-color);
     color: #33a72a;
     font-size: 20px;
@@ -213,7 +213,7 @@
     text-align: center;
     padding: 40px;
 }
-#contactmodal .contactmodal__container .contactmodal__overlay--error {
+.contactmodal .contactmodal__container .contactmodal__overlay--error {
     background-color: var(--bg-color);
     color: #d41d1d;
     font-size: 20px;
@@ -221,12 +221,12 @@
     text-align: center;
     padding: 40px;
 }
-#contactmodal .contactmodal__container .contactmodal__overlay--visible {
+.contactmodal .contactmodal__container .contactmodal__overlay--visible {
     z-index: 1;
     display: flex;
     flex-direction: column;
 }
-#contactmodal .contactmodal__container .contactmodal__spinner {
+.contactmodal .contactmodal__container .contactmodal__spinner {
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
@@ -249,11 +249,11 @@
     }
 }
 @media (max-width: 500px) {
-    #contactmodal .contactmodal__btn {
+    .contactmodal .contactmodal__btn {
         width: 50px;
         height: 50px;
     }
-    #contactmodal .contactmodal__container {
+    .contactmodal .contactmodal__container {
         width: calc(100% - 40px);
         margin: 0 auto;
         right: unset !important;
