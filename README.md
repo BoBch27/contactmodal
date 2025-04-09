@@ -67,8 +67,8 @@ new ContactModal({
     value: null
   },
   colors: { // Customise modal appearance
-    bg: '#242424', // Background colour
-    text: '#ffffff', // Text colour
+    bg: '#ffffff', // Background colour
+    text: '#242424', // Text colour
     details: '#ffffff' // Accent colour
   },
   texts: { // Customise modal text

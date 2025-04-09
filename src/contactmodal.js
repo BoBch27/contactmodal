@@ -11,7 +11,7 @@ class ContactModal {
             delay: 5,
             values: { name: '', phone: '', email: '' },
             token: { name: null, value: null },
-            colors: { bg: '#242424', text: '#ffffff', details: '#ffffff' },
+            colors: { bg: '#ffffff', text: '#242424', details: '#ffffff' },
             texts: {
                 title: "Let's have a chat!",
                 subtitle: '',
