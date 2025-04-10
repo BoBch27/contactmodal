@@ -1,5 +1,6 @@
 import { transform, context } from 'esbuild';
 import { readFile } from "fs/promises";
+import { exec } from 'child_process';
 
 const isDev = process.argv.includes('--watch');
 
@@ -50,3 +51,14 @@ await buildOrWatch({
     outfile: 'dist/contactmodal.esm.js',
     format: 'esm',
 }, 'ESM');
+
+// launch live server if dev
+if (isDev) {
+    exec('npx live-server ./ --port=3000 --open=public/index.html', (err, stdout, stderr) => {
+        if (err) {
+            console.error(`🚨 live-server error: ${stderr}`);
+        } else {
+            console.log(stdout);
+        }
+    });
+}
