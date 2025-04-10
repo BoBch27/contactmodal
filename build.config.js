@@ -12,13 +12,25 @@ const CSSMinifyPlugin = {
     }
 };
 
-build({
+const commonConfig = {
     entryPoints: ['src/contactmodal.js'],
     bundle: true,
-    outfile: 'dist/contactmodal.min.js',
     minify: true,
-    loader: { '.html': 'text' },
-    format: 'iife',
     target: 'es6',
+    loader: { '.html': 'text' },
     plugins: [CSSMinifyPlugin],
+};
+
+// IIFE version for <script src="...">
+build({
+    ...commonConfig,
+    outfile: 'dist/contactmodal.min.js',
+    format: 'iife',
+}).catch(() => process.exit(1));
+
+// ESM version for npm imports
+build({
+    ...commonConfig,
+    outfile: 'dist/contactmodal.esm.js',
+    format: 'esm',
 }).catch(() => process.exit(1));

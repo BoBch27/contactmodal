@@ -2,8 +2,15 @@
   "name": "contactmodal",
   "version": "1.0.4",
   "description": "An elegant, easy to use contact form for any website.",
-  "main": "dist/contactmodal.min.js",
-  "module": "dist/contactmodal.min.js",
+  "type": "module",
+  "main": "dist/contactmodal.esm.js",
+  "exports": {
+    "import": "./dist/contactmodal.esm.js"
+  },
+  "files": [
+    "dist/contactmodal.esm.js",
+    "dist/contactmodal.min.js"
+  ],
   "scripts": {
     "build": "node build.config.js"
   },
@@ -26,8 +33,5 @@
   "homepage": "https://github.com/bobch27/contactmodal#readme",
   "devDependencies": {
     "esbuild": "^0.25.0"
-  },
-  "files": [
-    "dist/contactmodal.min.js"
-  ]
+  }
 }
