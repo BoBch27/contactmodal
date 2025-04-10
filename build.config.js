@@ -54,7 +54,7 @@ await buildOrWatch({
 
 // launch live server if dev
 if (isDev) {
-    exec('npx live-server ./ --port=3000 --open=public/index.html', (err, stdout, stderr) => {
+    exec('npx live-server ./ --port=3000 --open=public/test.html', (err, stdout, stderr) => {
         if (err) {
             console.error(`🚨 live-server error: ${stderr}`);
         } else {
