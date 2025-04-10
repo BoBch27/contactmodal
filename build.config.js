@@ -34,6 +34,7 @@ const commonConfig = {
     target: 'es6',
     loader: { '.html': 'text' },
     plugins: [CSSMinifyPlugin],
+    sourcemap: isDev,
 };
 
 // IIFE version for <script src="...">
