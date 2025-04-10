@@ -1,5 +1,20 @@
-import { transform, build } from 'esbuild';
+import { transform, context } from 'esbuild';
 import { readFile } from "fs/promises";
+
+const isDev = process.argv.includes('--watch');
+
+// helper to build+watch a specific config
+const buildOrWatch = async (config, label) => {
+    const ctx = await context(config);
+    if (isDev) {
+        await ctx.watch();
+        console.log(`👀 Watching ${label}...`);
+    } else {
+        await ctx.rebuild();
+        await ctx.dispose();
+        console.log(`✅ Built ${label}`);
+    }
+};
 
 const CSSMinifyPlugin = {
     name: "CSSMinifyPlugin",
@@ -22,15 +37,15 @@ const commonConfig = {
 };
 
 // IIFE version for <script src="...">
-build({
+await buildOrWatch({
     ...commonConfig,
     outfile: 'dist/contactmodal.min.js',
     format: 'iife',
-}).catch(() => process.exit(1));
+}, 'IIFE');
 
 // ESM version for npm imports
-build({
+await buildOrWatch({
     ...commonConfig,
     outfile: 'dist/contactmodal.esm.js',
     format: 'esm',
-}).catch(() => process.exit(1));
+}, 'ESM');
