@@ -199,55 +199,137 @@
     display: none;
     align-items: center;
     justify-content: center;
+    padding: 40px;
+    background-color: var(--bg-color);
     z-index: -1;
 }
-.contactmodal .contactmodal__container .contactmodal__overlay--loading {
-    background-color: var(--bg-color);
+.contactmodal .contactmodal__container .contactmodal__overlay p {
     font-size: 20px;
-}
-.contactmodal .contactmodal__container .contactmodal__overlay--success {
-    background-color: var(--bg-color);
-    color: #33a72a;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    padding: 40px;
-}
-.contactmodal .contactmodal__container .contactmodal__overlay--error {
-    background-color: var(--bg-color);
-    color: #d41d1d;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    padding: 40px;
 }
 .contactmodal .contactmodal__container .contactmodal__overlay--visible {
     z-index: 1;
     display: flex;
     flex-direction: column;
 }
-.contactmodal .contactmodal__container .contactmodal__spinner {
-    width: 1.5em;
-    height: 1.5em;
+.contactmodal .contactmodal__icon-container {
+    padding: 10px;
     border-radius: 50%;
-    box-shadow:
-        0 -3em rgba(255, 255, 255, 1),
-        2.25em -2.25em rgba(255, 255, 255, 0.875),
-        3em 0 rgba(255, 255, 255, 0.75),
-        2.25em 2.25em rgba(255, 255, 255, 0.625),
-        0 3em rgba(255, 255, 255, 0.5),
-        -2.25em 2.25em rgba(255, 255, 255, 0.375),
-        -3em 0 rgba(255, 255, 255, 0.25);
-    animation: contactmodal-spinner 800ms infinite linear;
+    background-color: #ffffff;
+    margin-bottom: 20px;
 }
-@keyframes contactmodal-spinner {
-    0% {
-        transform: rotate(0);
-    }
+.contactmodal .contactmodal__icon--loading {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactmodal .contactmodal__loading-spinner {
+    width: 50px;
+    height: 50px;
+    animation: rotate 1s linear infinite;
+}
+.contactmodal .contactmodal__loading-spinner .path {
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
     100% {
         transform: rotate(360deg);
     }
 }
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+.contactmodal .contactmodal__icon--success {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    animation: rotateSuccess 1s ease-in-out;
+}
+.contactmodal .contactmodal__success-ring {
+    stroke: #33a72a;
+    stroke-width: 4;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: drawCircle 0.5s ease-out forwards;
+}
+.contactmodal .contactmodal__success-line {
+    stroke: #33a72a;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: drawCheck 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+@keyframes drawCircle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes rotateSuccess {
+    0% { transform: rotate(45deg); opacity: 0; }
+    100% { transform: rotate(0deg); opacity: 1; }
+}
+.contactmodal .contactmodal__icon--error {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    animation: scaleError 0.5s ease-in-out;
+}
+.contactmodal .contactmodal__error-ring {
+    stroke: #d41d1d;
+    stroke-width: 4;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: drawCircle 0.4s ease-out forwards;
+}
+.contactmodal .contactmodal__error-line1,
+.contactmodal .contactmodal__error-line2 {
+    stroke: #d41d1d;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: drawCross 0.3s ease-out forwards;
+}
+.contactmodal .contactmodal__error-line2 {
+    animation-delay: 0.2s;
+}
+@keyframes drawCross {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes scaleError {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 @media (max-width: 500px) {
     .contactmodal .contactmodal__btn {
         width: 50px;

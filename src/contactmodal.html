@@ -75,13 +75,34 @@
             </button>
         </form>
         <div class="contactmodal__overlay contactmodal__overlay--loading">
-            Loading...
+            <div class="contactmodal__icon contactmodal__icon--loading">
+                <svg class="contactmodal__loading-spinner" viewBox="0 0 50 50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4" />
+                </svg>
+            </div>
         </div>
         <div class="contactmodal__overlay contactmodal__overlay--success">
-            {{ successMssg }}
+            <div class="contactmodal__icon-container">
+                <div class="contactmodal__icon contactmodal__icon--success">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="contactmodal__success-ring" cx="40" cy="40" r="35" fill="none"/>
+                        <polyline class="contactmodal__success-line" points="26,40 36,50 54,30" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            <p>{{ successMssg }}</p>
         </div>
         <div class="contactmodal__overlay contactmodal__overlay--error">
-            {{ errorMssg }}
+            <div class="contactmodal__icon-container">
+                <div class="contactmodal__icon contactmodal__icon--error">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="contactmodal__error-ring" cx="40" cy="40" r="35" fill="none"/>
+                        <line x1="26" y1="26" x2="54" y2="54" class="contactmodal__error-line1"/>
+                        <line x1="54" y1="26" x2="26" y2="54" class="contactmodal__error-line2"/>
+                    </svg>
+                </div>
+            </div>
+            <p>{{ errorMssg }}</p>
         </div>
     </div>
 </div>
