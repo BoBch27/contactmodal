@@ -99,6 +99,8 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     width: 100%;
+    border: 2px solid var(--text-color);
+    border-radius: 20px;
 }
 .contactmodal.right .contactmodal__contact {
     transform: translateX(110%);
