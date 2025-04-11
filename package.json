@@ -1,6 +1,6 @@
 {
   "name": "contactmodal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An elegant, easy to use contact form for any website.",
   "type": "module",
   "main": "dist/contactmodal.esm.js",
