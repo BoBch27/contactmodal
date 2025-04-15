@@ -96,8 +96,7 @@
     justify-content: center;
     position: relative;
     transition: all 300ms ease-in;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
     width: 100%;
     border: 2px solid var(--text-color);
     border-radius: 20px;
@@ -110,7 +109,6 @@
 }
 .contactmodal .contactmodal__container .contactmodal__header {
     padding: 40px;
-    background-color: var(--text-color);
 }
 .contactmodal .contactmodal__container .contactmodal__exit {
     position: absolute;
@@ -136,6 +134,8 @@
     color: var(--bg-color);
 }
 .contactmodal .contactmodal__form {
+    background-color: var(--bg-color);
+    border-radius: 20px;
     padding: 40px;
 }
 .contactmodal .contactmodal__container .form__item {
