@@ -204,6 +204,7 @@
     padding: 40px;
     background-color: var(--bg-color);
     z-index: -1;
+    border-radius: 20px;
 }
 .contactmodal .contactmodal__container .contactmodal__overlay p {
     font-size: 20px;
